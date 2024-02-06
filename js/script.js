@@ -53,7 +53,7 @@ submitBtn.addEventListener("click", function () {
         NameErr.innerHTML = ``
         firstNameErr.innerHTML = ``
     } else {
-        fullName.innerHTML = `${firstName.value} ${lastName.value}`
+        fullName.innerHTML = `Name: ${firstName.value} ${lastName.value}`
         NameErr.innerHTML = ``
         firstNameErr.innerHTML = ``
         lastNameErr.innerHTML = ``
@@ -62,7 +62,7 @@ submitBtn.addEventListener("click", function () {
     if (program.value == "") {
         programErr.innerHTML = `Enter Your Program`
     } else {
-        getProgram.innerHTML = ` ${program.value}`
+        getProgram.innerHTML = `Program: ${program.value}`
         programErr.innerHTML = ``
     }
 
@@ -71,7 +71,7 @@ submitBtn.addEventListener("click", function () {
     } else if (!email.value.match(emailRegex)) {
         emailErr.innerHTML = `Invalid email format`
     } else {
-        getEmail.innerHTML = `${email.value}`
+        getEmail.innerHTML = `Email: ${email.value}`
         emailErr.innerHTML = ``
     }
 
@@ -82,7 +82,7 @@ submitBtn.addEventListener("click", function () {
             numberErr.innerHTML = `Please enter a 11 digit.`
 
         } else {
-            getNumber.innerHTML = `+88 ${phoneNumber.value}`
+            getNumber.innerHTML = `Phone Number: +88 ${phoneNumber.value}`
             numberErr.innerHTML = ``
         }
     } else {
@@ -106,14 +106,14 @@ submitBtn.addEventListener("click", function () {
     if (bloodGroup.value == "") {
         bloodErr.innerHTML = `Enter Blood group`
     } else {
-        getBlood.innerHTML = `${bloodGroup.value}`
+        getBlood.innerHTML = `Blood Group: ${bloodGroup.value}`
         bloodErr.innerHTML = ``
     }
 
     if (address.value == "") {
         addressErr.innerHTML = `Enter Your Address`
     } else {
-        getAddress.innerHTML = `${address.value}`
+        getAddress.innerHTML = `Address: ${address.value}`
         addressErr.innerHTML = ``
     }
 

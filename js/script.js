@@ -1,3 +1,4 @@
+
 let firstName = document.querySelector(".first_name")
 let lastName = document.querySelector(".last_name")
 
@@ -115,6 +116,7 @@ submitBtn.addEventListener("click", function () {
     } else {
         getAddress.innerHTML = `Address: ${address.value}`
         addressErr.innerHTML = ``
+        
     }
 
 

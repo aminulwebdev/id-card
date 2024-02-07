@@ -1,10 +1,13 @@
-
 let firstName = document.querySelector(".first_name")
 let lastName = document.querySelector(".last_name")
+
 
 let firstNameErr = document.querySelector(".firstName_err")
 let lastNameErr = document.querySelector(".lastName_err")
 let NameErr = document.querySelector(".name_err")
+
+let studentId = document.querySelector(".your_id")
+let studentIdErr = document.querySelector(".studentID_err")
 
 let program = document.querySelector(".your_program")
 let programErr = document.querySelector(".program_err")
@@ -24,18 +27,22 @@ let addressErr = document.querySelector(".address_err")
 let submitBtn = document.querySelector(".submit_btn")
 let resetBtn = document.querySelector(".reset")
 
+
 let numberRegex = /^[0-9]+$/;
 let emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-let numberFormat = 11;
 
 let fullName = document.querySelector(".fullname")
+let getStudentId = document.querySelector(".id_number")
 let getProgram = document.querySelector(".program")
 let getEmail = document.querySelector(".email")
 let getNumber = document.querySelector(".number")
 let getBlood = document.querySelector(".blood_group")
 let getAddress = document.querySelector(".address")
 
+
+
 submitBtn.addEventListener("click", function () {
+
     if (firstName.value.match(numberRegex) || lastName.value.match(numberRegex)) {
         NameErr.innerHTML = `Name cannot contain numbers`;
         firstNameErr.innerHTML = ``;
@@ -45,85 +52,71 @@ submitBtn.addEventListener("click", function () {
         NameErr.innerHTML = `What's Your Name?`
         firstNameErr.innerHTML = ``
         lastNameErr.innerHTML = ``
+
     } else if (firstName.value == "") {
         firstNameErr.innerHTML = `What's your first Name ?`
         NameErr.innerHTML = ``
         lastNameErr.innerHTML = ``
+
     } else if (lastName.value == "") {
         lastNameErr.innerHTML = `What's your last Name ?`
         NameErr.innerHTML = ``
         firstNameErr.innerHTML = ``
-    } else {
-        fullName.innerHTML = `Name: ${firstName.value} ${lastName.value}`
+
+    } else if (studentId.value == "") {
+        studentIdErr.innerHTML = `Please enter a number.`
         NameErr.innerHTML = ``
         firstNameErr.innerHTML = ``
         lastNameErr.innerHTML = ``
-    }
-
-    if (program.value == "") {
+    } else if (isNaN(studentId.value)) {
+        studentIdErr.innerHTML = `Please enter a number, don't use text.`
+        NameErr.innerHTML = ``
+        firstNameErr.innerHTML = ``
+        lastNameErr.innerHTML = ``
+    } else if (program.value == "") {
         programErr.innerHTML = `Enter Your Program`
-    } else {
-        getProgram.innerHTML = `Program: ${program.value}`
-        programErr.innerHTML = ``
-    }
+        studentIdErr.innerHTML = ``
 
-    if (email.value == "") {
+    } else if (email.value == "") {
         emailErr.innerHTML = `Email is required`
+        programErr.innerHTML = ``
+
     } else if (!email.value.match(emailRegex)) {
         emailErr.innerHTML = `Invalid email format`
-    } else {
-        getEmail.innerHTML = `Email: ${email.value}`
+        programErr.innerHTML = ``
+
+    } else if (phoneNumber.value == "") {
+        numberErr.innerHTML = `Please enter a number.`
         emailErr.innerHTML = ``
-    }
 
-    if (phoneNumber.value == "") {
-        numberErr.innerHTML = `Phone Number is required`
-    } else if (Boolean(phoneNumber.value - 20)) {
-        if (phoneNumber.value.length !== 11) {
-            numberErr.innerHTML = `Please enter a 11 digit.`
+    } else if (isNaN(phoneNumber.value)) {
+        numberErr.innerHTML = `Please enter a number, don't use text.`
+        emailErr.innerHTML = ``
 
-        } else {
-            getNumber.innerHTML = `Phone Number: +88 ${phoneNumber.value}`
-            numberErr.innerHTML = ``
-        }
-    } else {
-        numberErr.innerHTML = `Enter Number, don't text`
-    }
+    } else if (phoneNumber.value.length !== 11) {
+        numberErr.innerHTML = `Please enter a 11 digit.`
+        emailErr.innerHTML = ``
 
-    // else if (isNaN(phoneNumber.value)) {
-    //     numberErr.innerHTML = `Please enter a number, don't use text.`
-    // } else if (phoneNumber.value.length !== 11) {
-    //     numberErr.innerHTML = `Please enter a 11 digit.`
-    // } else {
-    //     getNumber.innerHTML = `+880 ${phoneNumber.value}`
-    //     NameErr.innerHTML = ``
-    //     firstNameErr.innerHTML = ``
-    //     lastNameErr.innerHTML = ``
-    //     emailErr.innerHTML = ``
-    //     numberErr.innerHTML = ``
-    // }
-
-
-    if (bloodGroup.value == "") {
+    } else if (bloodGroup.value == "") {
         bloodErr.innerHTML = `Enter Blood group`
-    } else {
-        getBlood.innerHTML = `Blood Group: ${bloodGroup.value}`
-        bloodErr.innerHTML = ``
-    }
+        numberErr.innerHTML = ``
 
-    if (address.value == "") {
+    } else if (address.value == "") {
         addressErr.innerHTML = `Enter Your Address`
+        bloodErr.innerHTML = ``
+
     } else {
+        fullName.innerHTML = `Name: ${firstName.value} ${lastName.value}`
+        getProgram.innerHTML = `Program: ${program.value}`
+        getEmail.innerHTML = `Email: ${email.value}`
+        getNumber.innerHTML = `${phoneNumber.value}`
+        getBlood.innerHTML = `Blood Group: ${bloodGroup.value}`
         getAddress.innerHTML = `Address: ${address.value}`
         addressErr.innerHTML = ``
-        
     }
-
-
-
 
 })
 
-resetBtn.addEventListener("click", function(){
+resetBtn.addEventListener("click", function () {
     location.reload()
 })

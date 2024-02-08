@@ -114,7 +114,7 @@ submitBtn.addEventListener("click", function () {
         fullName.innerHTML = `Name: ${firstName.value} ${lastName.value}`
         getProgram.innerHTML = `Program: ${program.value}`
         getEmail.innerHTML = `Email: ${email.value}`
-        getNumber.innerHTML = `${phoneNumber.value}`
+        getNumber.innerHTML = `Phone Number: ${phoneNumber.value}`
         getBlood.innerHTML = `Blood Group: ${bloodGroup.value}`
         getAddress.innerHTML = `Address: ${address.value}`
         addressErr.innerHTML = ``
@@ -131,7 +131,7 @@ const images = [
     './images/img_01.png',
     './images/img_02.png',
     './images/img_03.png'
-    // Add more image filenames as needed
+   
 ]
 
 

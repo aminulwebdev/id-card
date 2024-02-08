@@ -38,7 +38,7 @@
                             <form action="#" class="">
 
                                 <input
-                                    class="first_name border border-[#dadfe4] rounded text-[#263445] outline-none py-3 pl-4 pr-[164px] mb-2"
+                                    class="first_name text-red-600 border border-[#dadfe4] rounded text-[#263445] outline-none py-3 pl-4 pr-[164px] mb-2"
                                     type="text" name="" id="" placeholder="First name">
                                 <p class="firstName_err"></p>
                                 <p class="name_err"></p>
@@ -64,10 +64,28 @@
                                     type="text" name="" id="" placeholder="Email">
                                 <p class="email_err"></p>
 
+
                                 <input
-                                    class="phone_number border border-[#dadfe4] rounded text-[#263445] outline-none py-3 pl-4 pr-[164px]  my-2"
+                                    class="phone_number border border-[#dadfe4] rounded text-[#263445] outline-none py-3 pl-4 pr-[164px]  "
                                     type="text" name="" id="" placeholder="Phone number">
                                 <p class="number_err"></p>
+
+                                <!-- <div class="flex gap-4 my-2">
+
+                                    <input
+                                        class="phone_number border border-[#dadfe4] rounded text-[#263445] outline-none py-3 pl-4 pr-[50px]  "
+                                        type="text" name="" id="" placeholder="Phone number">
+                                    <p class="number_err"></p>
+
+                                    <select name="" id="blood_group"
+                                        class="outline-none border border-[#dadfe4] rounded px-4">
+                                        <option value="A">A+</option>
+                                        <option value="A">B+</option>
+                                        <option value="A">O+</option>
+                                        <option value="A">A</option>
+                                        <option value="A">A</option>
+                                    </select>
+                                </div> -->
 
                                 <input
                                     class="blood border border-[#dadfe4] rounded text-[#263445] outline-none py-3 pl-4 pr-[164px]  my-2"
@@ -82,8 +100,10 @@
                             </form>
                             <!-- ================ Button =============== -->
                             <div class="flex justify-center gap-5 mt-3">
-                                <button class="submit_btn bg-black text-white px-4 py-2 rounded-md">Submit</button>
-                                <button class="reset  bg-black text-white px-4 py-2 rounded-md">Reset</button>
+                                <button
+                                    class="submit_btn bg-black  text-white px-4 py-2 rounded-md hover:bg-red-500 transition-all duration-300">Submit</button>
+                                <button
+                                    class="reset  bg-red-500 hover:bg-black transition-all duration-300 text-white px-4 py-2 rounded-md">Reset</button>
                             </div>
 
                             <!-- ================== Form End Here =============== -->
@@ -93,31 +113,47 @@
 
 
                     <!-- ================ Id Card Here ============= -->
-                    <div class="id_card_show border-2 border-red-600 rounded-lg w-96 h-96 bg-blue-400  ">
-                        <div class="bg-black h-12 flex items-center  justify-center">
+                   <div class="flex justify-center flex-col items-center">
+                    <div class="flex justify-center flex-col items-center border-2 border-red-600 rounded-lg w-[450px] h-[665px]  ">
+                        <div
+                            class="id_card_show  bg-no-repeat bg-cover flex justify-center items-center flex-col w-full h-full overflow-hidden object-cover rounded-lg ">
+                            <!-- <div class="bg-banner h-12 flex items-center  justify-center">
                             <img src="./images/mak_logo.png" alt="" class="w-[110px]">
                             <h1 class="text-white">Student Id Card</h1>
+                        </div> -->
+
+                            <div class="px-11 mt-[268px] text-xl flex flex-col gap-1">
+
+                                <h1 class="fullname"></h1>
+
+                                <span class="id_number"></span>
+
+                                <span class="program"></span>
+
+                                <p class="email"></p>
+
+                                <p class="number"></p>
+
+                                <p class="blood_group"></p>
+
+                                <p class="address"></p>
+
+                            </div>
+
+
+
                         </div>
-
-                        <div class="px-11 mt-11 ">
-
-                            <h1 class="fullname"></h1>
-
-                            <span class="id_number"></span>
-
-                            <span class="program"></span>
-
-                            <p class="email"></p>
-
-                            <p class="number"></p>
-
-                            <p class="blood_group"></p>
-
-                            <p class="address"></p>
-
-                        </div>
-
+                        
                     </div>
+                    <div class="bg-gray-500 w-[350px] flex justify-center items-center gap-5 py-4 rounded mt-5">
+                        <button
+                            class="prev_btn text-white submit_btn bg-black   px-4 py-2 rounded-md hover:bg-red-500 transition-all duration-300">Previous</button>
+                        <button
+                            class="next_btn bg-red-500 hover:bg-black transition-all duration-300 text-white px-4 py-2 rounded-md">Next</button>
+                        <button
+                            class="download_btn bg-red-500 hover:bg-black transition-all duration-300 text-white px-4 py-2 rounded-md">Download</button>
+                    </div>
+                   </div>
                 </div>
 
             </div>

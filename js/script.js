@@ -40,6 +40,11 @@ let getBlood = document.querySelector(".blood_group")
 let getAddress = document.querySelector(".address")
 
 
+let idCardShow = document.querySelector(".id_card_show")
+console.log(idCardShow);
+let prevBtn = document.querySelector(".prev_btn")
+let nextBtn = document.querySelector(".next_btn")
+let downImages = document.querySelector(".download_btn")
 
 submitBtn.addEventListener("click", function () {
 
@@ -120,3 +125,48 @@ submitBtn.addEventListener("click", function () {
 resetBtn.addEventListener("click", function () {
     location.reload()
 })
+
+
+const images = [
+    './images/img_01.png',
+    './images/img_02.png',
+    './images/img_03.png'
+    // Add more image filenames as needed
+]
+
+
+let imageIndex = 0;
+
+function idCardChanged() {
+
+    idCardShow.style.backgroundImage = `url(${images[imageIndex]})`;
+}
+
+nextBtn.addEventListener("click", function () {
+    imageIndex++
+    if (imageIndex == images.length) {
+        imageIndex = 0
+    }
+    idCardChanged()
+
+    console.log(nextBtn);
+    console.log(imageIndex)
+})
+
+prevBtn.addEventListener("click", function () {
+    imageIndex--
+    if (imageIndex < 0) {
+        imageIndex = images.length - 1
+    }
+    idCardChanged()
+})
+
+
+idCardChanged()
+
+
+function downloadImage() {
+    window.location.href = images[imageIndex];
+}
+
+downImages.addEventListener("click", downloadImage)

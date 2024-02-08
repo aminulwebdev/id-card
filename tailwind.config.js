@@ -16,7 +16,7 @@ tailwind.config = {
           
         },
         backgroundImage: {
-          'banner': " linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./images/banner.jpg')",
+          'banner': " linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./images/id_imgg.jpeg')",
         }
       }
     }
